@@ -1,22 +1,23 @@
-package com.example.transacthub.Controller;
+package com.example.transacthub.Model;
 
-import org.hibernate.resource.transaction.spi.TransactionStatus;
+package com.example.transacthub.model;
 
 public class Withdrawal {
     private Long id;
-    private TransactionType type;
+    private String type;
     private String transactionDate;
-    private TransactionStatus status;
+    private String status;
     private Long payerId;
     private WithdrawalMedium medium;
     private Double amount;
     private String description;
 
     public Withdrawal() {
+        // Default constructor
     }
 
-    public Withdrawal(Long id, TransactionType type, String transactionDate, TransactionStatus status,
-                      Long payerId, WithdrawalMedium medium, Double amount, String description) {
+    public Withdrawal(Long id, String type, String transactionDate, String status, Long payerId,
+                      WithdrawalMedium medium, Double amount, String description) {
         this.id = id;
         this.type = type;
         this.transactionDate = transactionDate;
@@ -27,8 +28,6 @@ public class Withdrawal {
         this.description = description;
     }
 
-    // Getters and setters
-
     public Long getId() {
         return id;
     }
@@ -37,11 +36,11 @@ public class Withdrawal {
         this.id = id;
     }
 
-    public TransactionType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TransactionType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -53,11 +52,11 @@ public class Withdrawal {
         this.transactionDate = transactionDate;
     }
 
-    public TransactionStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(TransactionStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

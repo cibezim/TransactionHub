@@ -1,33 +1,32 @@
-package com.example.transacthub.Controller;
+package com.example.transacthub.Model;
 
-import org.hibernate.resource.transaction.spi.TransactionStatus;
 
-public class Withdrawal {
+
+public class Deposit {
     private Long id;
-    private TransactionType type;
+    private String type;
     private String transactionDate;
-    private TransactionStatus status;
-    private Long payerId;
-    private WithdrawalMedium medium;
+    private String status;
+    private Long payeeId;
+    private DepositMedium medium;
     private Double amount;
     private String description;
 
-    public Withdrawal() {
+    public Deposit() {
+        // Default constructor
     }
 
-    public Withdrawal(Long id, TransactionType type, String transactionDate, TransactionStatus status,
-                      Long payerId, WithdrawalMedium medium, Double amount, String description) {
+    public Deposit(Long id, String type, String transactionDate, String status, Long payeeId, DepositMedium medium,
+                   Double amount, String description) {
         this.id = id;
         this.type = type;
         this.transactionDate = transactionDate;
         this.status = status;
-        this.payerId = payerId;
+        this.payeeId = payeeId;
         this.medium = medium;
         this.amount = amount;
         this.description = description;
     }
-
-    // Getters and setters
 
     public Long getId() {
         return id;
@@ -37,11 +36,11 @@ public class Withdrawal {
         this.id = id;
     }
 
-    public TransactionType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TransactionType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -53,27 +52,27 @@ public class Withdrawal {
         this.transactionDate = transactionDate;
     }
 
-    public TransactionStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(TransactionStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public Long getPayerId() {
-        return payerId;
+    public Long getPayeeId() {
+        return payeeId;
     }
 
-    public void setPayerId(Long payerId) {
-        this.payerId = payerId;
+    public void setPayeeId(Long payeeId) {
+        this.payeeId = payeeId;
     }
 
-    public WithdrawalMedium getMedium() {
+    public DepositMedium getMedium() {
         return medium;
     }
 
-    public void setMedium(WithdrawalMedium medium) {
+    public void setMedium(DepositMedium medium) {
         this.medium = medium;
     }
 
